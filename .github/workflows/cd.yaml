@@ -1,0 +1,28 @@
+
+name: CD Workflow
+
+on: 
+  push:
+    branches:
+      - master
+  
+jobs: 
+  my-job-cd:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: action/checkout@v3
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run Build
+
+      - name: Deploy
+        run: npm run deploy
+
+
+
+
+
