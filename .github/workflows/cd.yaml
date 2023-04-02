@@ -30,4 +30,4 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: npm run deploy -- -r https://github.com/salino3/auto-gh-pages-deploy.git
+        run: npm run deploy -- -r git@github.com:salino3/auto-gh-pages-deploy.git
