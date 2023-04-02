@@ -13,6 +13,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Use SSH key
+        run: 
+          mkdir -p ~/.ssh/
+          echo "${{secrets.SSH_PRIVATE_KEY_2}}" > ~/.shh/id_rsa
+          npm chmod 600 ~/ssh/id_rsa
+
+      - name: Git config
+        run: 
+          git config --global user.email "flaviobcn@gmail.com"
+          git config --global user.name "salino3"
+          
+
       - name: Install
         run: npm ci
 
@@ -20,7 +32,7 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: npm run deploy
+        run: npm run deploy -- -r https://github.com/salino3/auto-gh-pages-deploy.git
 
 
 
