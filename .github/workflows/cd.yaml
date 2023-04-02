@@ -16,11 +16,11 @@ jobs:
         run: 
           mkdir -p ~/.ssh/
           echo "${{secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          chmod 600 ~/.ssh
 
       - name: Git config
         run: 
-          git config --global user.email "flaviobcn@gmail.com"
+          git config --global user.email "flaviobcn012@gmail.com"
           git config --global user.name "salino3"
 
       - name: Install
