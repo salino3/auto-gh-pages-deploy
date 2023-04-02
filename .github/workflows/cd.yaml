@@ -17,7 +17,7 @@ jobs:
         run: 
           mkdir -p ~/.ssh/
           echo "${{secrets.SSH_PRIVATE_KEY_2}}" > ~/.shh/id_rsa
-          npm chmod 600 ~/ssh
+          npm chmod 600 ~/.ssh
 
       - name: Git config
         run: 
