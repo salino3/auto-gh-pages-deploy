@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "salino3"
 
       - name: Install
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
